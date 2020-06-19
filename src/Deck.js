@@ -1,7 +1,7 @@
 
-const Card = require("./card");
+import Card from "./Card";
 
-class Deck {
+export default class Deck {
     constructor() {
         this.cards = [];
     }

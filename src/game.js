@@ -1,9 +1,6 @@
 
-const Deck = require("./deck");
+import Deck from "./Deck";
 
-console.log(Deck);
-/*
 const deck = new Deck();
 deck.initialise();
-console.log(d.cards);
-*/
+console.log(deck.cards);
