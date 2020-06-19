@@ -29,7 +29,7 @@ Card Game Simulation
 * Separation of concerns in the code for better understanding and code reusability
 * Unit tests for easier modifications without breaking existing functionality
 
-## Development
+## Development, Testing and Playing
 
 ### Run app locally
 
