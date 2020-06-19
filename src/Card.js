@@ -5,4 +5,12 @@ export default class Card {
         this.rank = rank;
         this.value = value;
     }
+
+    getCardRank() {
+        return this.rank;
+    }
+
+    getCardValue(){
+        return this.value;
+    }
 }

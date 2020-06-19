@@ -9,19 +9,19 @@ export default class Deck {
     initialise() {
         const suits = ['clubs', 'diamonds', 'hearts', 'spades'];
         const ranksDict = {
-            'A': '1',
-            '2': '2',
-            '3': '3',
-            '4': '4',
-            '5': '5',
-            '6': '6',
-            '7': '7',
-            '8': '8',
-            '9': '9',
-            '10': '10',
-            'J': '11',
-            'Q': '12',
-            'K': '12',
+            'A': 1,
+            '2': 2,
+            '3': 3,
+            '4': 4,
+            '5': 5,
+            '6': 6,
+            '7': 7,
+            '8': 8,
+            '9': 9,
+            '10': 10,
+            'J': 11,
+            'Q': 12,
+            'K': 13,
         };
 
         const ranks = Object.keys(ranksDict);
@@ -33,7 +33,16 @@ export default class Deck {
         });
     }
 
-    shuffleDeck() {
-        
+    shuffle() {
+        for(let i=this.cards.length-1; i>0; i--){
+            let rand = Math.floor(Math.random()*(i+1));
+            let temp = this.cards[i];
+            this.cards[i] = this.cards[rand];
+            this.cards[rand] = temp;
+        }
+    }
+
+    getCards(){
+        return this.cards;
     }
 }
