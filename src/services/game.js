@@ -1,10 +1,10 @@
 
 import Board from "../classes/Board";
 
-export function startGame(players){
+export function startGame(playerNames, cardsPerPlayer){
 
-    let game = new Board();
-    game.start(players);
+    let game = new Board(cardsPerPlayer);
+    game.start(playerNames);
 
     console.log("\n### Listing down the cards that the players had!!! ###\n");
     game.players.forEach((player) => {

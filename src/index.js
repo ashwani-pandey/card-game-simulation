@@ -9,7 +9,8 @@ const read = createInterface({
 
 
 // Simulating a game of four players
-const players = ["Ashwani", "Divay", "Pranav", "Ayush"];
+const playerNames = ["Ashwani", "Divay", "Pranav", "Ayush"];
+const cardsPerPlayer = 3;
 
 function askForNewGame(){
 
@@ -18,7 +19,7 @@ function askForNewGame(){
     
     read.question('Do you want to play a game? (Y/N): ', (answer) => {
         if(answer === "Y" || answer === "y"){
-            startGame(players);
+            startGame(playerNames, cardsPerPlayer);
             askForNewGame();
         } else if(answer === "N" || answer === "n"){
             read.close();

@@ -4,10 +4,10 @@ import Deck from "./Deck";
 import {victoryRules, faceOff} from "../services/rules";
 
 export default class Board {
-    constructor(){
+    constructor(cardsPerPlayer){
         this.cardsInMiddle = [];
         this.players = [];
-        this.cardsPerPlayer = 3;
+        this.cardsPerPlayer = cardsPerPlayer;
     }
 
     start(playerNames){
