@@ -1,8 +1,7 @@
 
 import Player from "./Player";
 import Deck from "./Deck";
-import victoryRules from "./rules";
-import {faceOff} from "./rules";
+import {victoryRules, faceOff} from "../services/rules";
 
 export default class Board {
     constructor(){
@@ -31,7 +30,7 @@ export default class Board {
     }
 
     winner(){
-        
+
         // recurse through all the 3 victory related rules
         let result = this.narrowDownWinner(victoryRules, this.players);
         if(result.length === 1)
@@ -42,9 +41,23 @@ export default class Board {
         if(result.length === 1)
             return result[0];
 
-        // IF THERE IS STILL A TIE, RESOLVE IT BY MAKING ALL OF THEM DRA ONE CARD EACH!
-        result = resolveTie(result);
+        // IF THERE IS STILL A TIE, RESOLVE IT BY MAKING ALL OF THEM DRAW ONE CARD EACH!
+        result = this.resolveFinalTie(result);
         return result[0];
+    }
+
+    resolveFinalTie(players){
+        
+        while(players.length > 1){
+            
+            for(let i=0; i<players.length; i++){
+                players[i].setTopCardInTie(this.cardsInMiddle[i]);
+            }
+            this.cardsInMiddle.splice(0, players.length);
+            players = faceOff(players);
+        }
+
+        return players;
     }
 
     narrowDownWinner(victoryRules, players){

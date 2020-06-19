@@ -14,6 +14,10 @@ export default class Player {
             this.topCard = this.playerCards[this.playerCards.length-1];
     }
 
+    setTopCardInTie(card){
+        this.topCard = card;
+    }
+
     setCards(cards){
         this.playerCards = cards;
     }

@@ -1,5 +1,5 @@
 
-export default [victoryRule1, victoryRule2, victoryRule3];
+export const victoryRules = [victoryRule1, victoryRule2, victoryRule3];
 
 function victoryRule1(player){
     // RULE 1 - Do all the cards have same number?
@@ -89,10 +89,6 @@ export function faceOff(players){
         return player.getTopCard().getCardValue() === topCardYet.getCardValue();
     });
     return result;
-}
-
-export function resolveFinalTie(players){
-    
 }
 
 
