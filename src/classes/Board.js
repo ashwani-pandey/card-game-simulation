@@ -26,7 +26,7 @@ export default class Board {
             player.setCards(this.cardsInMiddle.slice(0, this.cardsPerPlayer));
             player.setTopCard();
             this.cardsInMiddle.splice(0, this.cardsPerPlayer);
-        })
+        });
     }
 
     winner(){

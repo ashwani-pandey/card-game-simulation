@@ -3,18 +3,19 @@ export const victoryRules = [victoryRule1, victoryRule2, victoryRule3];
 
 function victoryRule1(player){
     // RULE 1 - Do all the cards have same number?
-    const cards = player.playerCards;
+    const cards = player.getCards();
     let victory = false;
 
     let valueMap = new Map();
     cards.forEach((card) => {
-        if(valueMap.has(card.value)){
-            valueMap.set(card.value, valueMap.get(card.value)+1);
+        let cardValue = card.getCardValue();
+        if(valueMap.has(cardValue)){
+            valueMap.set(cardValue, valueMap.get(cardValue)+1);
         } else {
-            valueMap.set(card.value, 1);
+            valueMap.set(cardValue, 1);
         }
 
-        if(valueMap.get(card.value) >= 3){
+        if(valueMap.get(cardValue) >= 3){
             victory = true;
         }
     });
@@ -24,9 +25,9 @@ function victoryRule1(player){
 
 function victoryRule2(player) {
     // RULE 2 - All the numbers are in sequence?
-    const cards = player.playerCards;
+    const cards = player.getCards();
     let victory = true;
-    let cardValues = cards.map((card) => card.value);
+    let cardValues = cards.map((card) => card.getCardValue());
     cardValues.sort((a,b)=> a-b);
     for(let i=1; i<cardValues.length; i++){
         if(cardValues[i] !== cardValues[i-1]+1){
@@ -39,18 +40,19 @@ function victoryRule2(player) {
 
 function victoryRule3(player){
     // RULE 3 - A pair of cards ( two kings or two 10s )
-    const cards = player.playerCards;
+    const cards = player.getCards();
     let victory = false;
 
     let valueMap = new Map();
     cards.forEach((card) => {
-        if(valueMap.has(card.value)){
-            valueMap.set(card.value, valueMap.get(card.value)+1);
+        let cardValue = card.getCardValue();
+        if(valueMap.has(cardValue)){
+            valueMap.set(cardValue, valueMap.get(cardValue)+1);
         } else {
-            valueMap.set(card.value, 1);
+            valueMap.set(cardValue, 1);
         }
 
-        if(valueMap.get(card.value) >= 2){
+        if(valueMap.get(cardValue) >= 2){
             victory = true;
         }
     });
