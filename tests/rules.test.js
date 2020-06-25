@@ -62,7 +62,7 @@ it("VICTORY RULE 2: All cards, in terms of numbers, are not in sequence", () => 
     expect(victoryRule2(testPlayer)).toBe(false);
 });
 
-it("VICTORY RULE 3: A pair of cards", () => {
+it("VICTORY RULE 3: A pair of two cards (two kings)", () => {
 
     const victoryRule3 = victoryRules[2]; 
 
@@ -77,7 +77,7 @@ it("VICTORY RULE 3: A pair of cards", () => {
     expect(victoryRule3(testPlayer)).toBe(true);
 });
 
-it("VICTORY RULE 3: Not a pair of cards", () => {
+it("VICTORY RULE 3: No pair of cards", () => {
 
     const victoryRule3 = victoryRules[2]; 
 

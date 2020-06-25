@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "jest",
-    "watch": "jest --watch *.js"
+    "test": "jest --silent --verbose",
+    "watch": "jest --watch --silent --verbose *.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

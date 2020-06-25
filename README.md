@@ -36,7 +36,8 @@ Card Game Simulation
 1. Clone repo ```https://github.com/ashwani-pandey/card-game-simulation```
 2. ```cd card-game-simulation```
 3. ```yarn install && yarn start```
-
+4. To run tests, ```yarn test```
+5. To auto run tests while making changes, ```yarn watch``` 
 
 ## Credits
 * [node.js](https://vuejs.org/), as runtime environment for JS code

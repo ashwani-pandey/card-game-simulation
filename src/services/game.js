@@ -15,5 +15,5 @@ export function startGame(playerNames, cardsPerPlayer){
 
     const winner = game.winner();
     console.log(`\n*********  The winner of the game is ${winner.getPlayerName()}  *********\n`);
-
+    return winner;
 }
